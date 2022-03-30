@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Submissão | ZUFMS</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      html {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        @apply h-full w-full;
+      }
+
+      input {
+        @apply focus-visible:outline-none;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "default-bg": "#024168",
+              "text-fade": "#99BBD0",
+              "text-placeholder": "#336B8E",
+              "default-border": "#2E688C",
+              "default-accent": "#52BD8F",
+              "button-fade": "#407494",
+              "icon-fade": "#87B1CB",
+              "even-row": "#104F76",
+              "odd-row": "#0C496F",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="w-[300rem]">
+    <div
+      class="bg-default-bg w-full min-w-fit h-full flex flex-col w-full whitespace-nowrap overflow-x-scroll"
+    >
+      <div class="h-40">
+        <header
+          class="w-full min-w-fit px-20 py-10 border-b-2 border-default-border"
+        >
+          <h3 class="text-white text-3xl font-semibold">Nova Submissão</h3>
+          <p class="text-text-fade text-lg">
+            Submeta uma nova amostra à coleção
+          </p>
+        </header>
+      </div>
+
+      <section
+        class="min-w-fit py-7 px-20 border-b-2 border-default-border relative flex"
+      >
+        <div class="flex items-start z-[1]">
+          <div class="flex flex-col items-center fixed">
+            <div
+              id="current-icon"
+              class="rounded-full p-4 mb-3 w-fit bg-default-accent"
+            >
+              <svg
+                fill="#FFF"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                fill="#000000"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M7 15h7v2H7zm0-4h10v2H7zm0-4h10v2H7zm12-4h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-.14 0-.27.01-.4.04-.39.08-.74.28-1.01.55-.18.18-.33.4-.43.64-.1.23-.16.49-.16.77v14c0 .27.06.54.16.78s.25.45.43.64c.27.27.62.47 1.01.55.13.02.26.03.4.03h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7-.25c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75zM19 19H5V5h14v14z"
+                />
+              </svg>
+            </div>
+            <div class="max-w-[11rem] whitespace-normal">
+              <h5 id="current-title" class="text-white font-semibold mb-1">
+                Nível de Registro
+              </h5>
+              <p id="current-subtitle" class="text-text-fade text-sm">
+                Termos genéricos aplicáveis a qualquer tipo de registro
+              </p>
+            </div>
+            <div
+              class="bg-default-border rounded-full p-[.25rem] fixed top-[22.7rem]"
+            >
+              <div class="bg-default-accent rounded-full p-[.35rem]"></div>
+            </div>
+            <button
+              onclick="window.scroll(window.scrollX-1041, window.scrollY)"
+              class="absolute left-0 top-0 text-text-fade hover:text-white text-md p-4"
+            >
+              <span class="material-icons-outlined">chevron_left</span>
+            </button>
+            <button
+              onclick="window.scroll(window.scrollX+1041, window.scrollY)"
+              class="absolute right-0 top-0 text-text-fade hover:text-white text-md p-4"
+            >
+              <span class="material-icons-outlined">chevron_right</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="w-[65rem] flex items-start">
+          <div id="cat1" class="flex flex-col items-center">
+            <div class="opacity-40 rounded-full p-4 mb-3 w-fit bg-button-fade">
+              <svg
+                fill="#FFF"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                fill="#000000"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M7 15h7v2H7zm0-4h10v2H7zm0-4h10v2H7zm12-4h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-.14 0-.27.01-.4.04-.39.08-.74.28-1.01.55-.18.18-.33.4-.43.64-.1.23-.16.49-.16.77v14c0 .27.06.54.16.78s.25.45.43.64c.27.27.62.47 1.01.55.13.02.26.03.4.03h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7-.25c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75zM19 19H5V5h14v14z"
+                />
+              </svg>
+            </div>
+            <div class="opacity-40 max-w-[11rem] whitespace-normal">
+              <h5 class="text-text-fade font-semibold mb-1">
+                Nível de Registro
+              </h5>
+              <p class="text-text-fade text-sm">
+                Termos genéricos aplicáveis a qualquer tipo de registro
+              </p>
+            </div>
+            <div
+              class="bg-default-border rounded-full p-[.6rem] absolute -bottom-[.6rem]"
+            ></div>
+          </div>
+        </div>
+
+        <div class="w-[65rem] flex items-start">
+          <div id="cat2" class="flex flex-col items-center">
+            <div class="opacity-40 rounded-full p-4 mb-3 w-fit bg-button-fade">
+              <svg
+                class="fill-icon-fade"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+                fill="#000000"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M2 17h2v.5H3v1h1v.5H2v1h3v-4H2v1zm1-9h1V4H2v1h1v3zm-1 3h1.8L2 13.1v.9h3v-1H3.2L5 10.9V10H2v1zm5-6v2h14V5H7zm0 14h14v-2H7v2zm0-6h14v-2H7v2z"
+                />
+              </svg>
+            </div>
+            <div class="opacity-40 max-w-[11rem] whitespace-normal">
+              <h5 class="text-text-fade font-semibold mb-1">Ocorrência</h5>
+              <p class="text-text-fade text-sm">
+                Existência de um organismo em um determinado lugar e momento
+              </p>
+            </div>
+            <div
+              class="bg-default-border rounded-full p-[.6rem] absolute -bottom-[.6rem]"
+            ></div>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div id="cat3" class="flex flex-col items-center">
+            <div class="opacity-40 rounded-full p-4 mb-3 w-fit bg-button-fade">
+              <svg
+                fill="#FFF"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"
+                />
+              </svg>
+            </div>
+            <div class="opacity-40 max-w-[11rem] whitespace-normal">
+              <h5 class="text-text-fade font-semibold mb-1">Evento</h5>
+              <p class="text-text-fade text-sm">
+                Uma ação que ocorre em algum local durante algum tempo
+              </p>
+            </div>
+            <div
+              class="bg-default-border rounded-full p-[.6rem] absolute -bottom-[.6rem]"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full min-w-fit flex-1 flex flex-col overflow-y-hidden">
+        <header class="px-20 py-10 flex whitespace-normal">
+          <div class="mr-3 w-[20rem]">
+            <h4 class="text-white text-2xl font-semibold mb-1">
+              Data da Última Modificação
+            </h4>
+            <p class="text-text-fade text-sm">
+              Data que o resgistro foi criado ou alterado
+            </p>
+          </div>
+
+          <div class="mr-3 w-[20rem]">
+            <h4 class="text-white text-2xl font-semibold mb-1">
+              Informação Retida
+            </h4>
+            <p class="text-text-fade text-sm">
+              Informação que falta em uma das colunas e deve ser procurada
+            </p>
+          </div>
+
+          <div class="mr-3 w-[20rem]">
+            <h4 class="text-white text-2xl font-semibold mb-1">
+              Base do Registro
+            </h4>
+            <p class="text-text-fade text-sm">
+              A natureza específica do registro
+            </p>
+          </div>
+
+          <div class="mr-3 w-[20rem] opacity-40">
+            <h4 class="text-white text-2xl font-semibold mb-1">
+              Número de Catálogo
+            </h4>
+            <p class="text-text-fade text-sm">Número de tombo do exemplar</p>
+          </div>
+        </header>
+        <div class="min-w-max overflow-y-auto flex-1">
+          <div class="w-full h-12 px-20 odd:bg-odd-row even:bg-even-row">
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="2022-03-24"
+              value="2022-03-24"
+            />
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="verificar amostra de tecido"
+            />
+            <select
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+            >
+              <option selected>PreservedSpecimen</option>
+              <option>LivingSpecimen</option>
+              <option>HumanObservation</option>
+              <option>MachineObservation</option>
+              <option>Sample</option>
+            </select>
+            <input
+              tabindex="2"
+              class="opacity-40 w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="ZUFMS-CRU00001"
+              value="ZUFMS-CRU00001"
+            />
+          </div>
+          <div class="w-full h-12 px-20 odd:bg-odd-row even:bg-even-row">
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="2022-03-24"
+              value="2022-03-24"
+            />
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="verificar amostra de tecido"
+            />
+            <select
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+            >
+              <option selected>PreservedSpecimen</option>
+              <option>LivingSpecimen</option>
+              <option>HumanObservation</option>
+              <option>MachineObservation</option>
+              <option>Sample</option>
+            </select>
+            <input
+              tabindex="2"
+              class="opacity-40 w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="ZUFMS-CRU00002"
+              value="ZUFMS-CRU00002"
+            />
+          </div>
+          <div class="w-full h-12 px-20 odd:bg-odd-row even:bg-even-row">
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="2022-03-24"
+              value="2022-03-24"
+            />
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="verificar amostra de tecido"
+            />
+            <select
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+            >
+              <option selected>PreservedSpecimen</option>
+              <option>LivingSpecimen</option>
+              <option>HumanObservation</option>
+              <option>MachineObservation</option>
+              <option>Sample</option>
+            </select>
+            <input
+              tabindex="2"
+              class="opacity-40 w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="ZUFMS-CRU00002"
+              value="ZUFMS-CRU00002"
+            />
+          </div>
+          <div class="w-full h-12 px-20 odd:bg-odd-row even:bg-even-row">
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="2022-03-24"
+              value="2022-03-24"
+            />
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="verificar amostra de tecido"
+            />
+            <select
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+            >
+              <option selected>PreservedSpecimen</option>
+              <option>LivingSpecimen</option>
+              <option>HumanObservation</option>
+              <option>MachineObservation</option>
+              <option>Sample</option>
+            </select>
+            <input
+              tabindex="2"
+              class="opacity-40 w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="ZUFMS-CRU00002"
+              value="ZUFMS-CRU00002"
+            />
+          </div>
+          <div class="w-full h-12 px-20 odd:bg-odd-row even:bg-even-row">
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="2022-03-24"
+              value="2022-03-24"
+            />
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="verificar amostra de tecido"
+            />
+            <select
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+            >
+              <option selected>PreservedSpecimen</option>
+              <option>LivingSpecimen</option>
+              <option>HumanObservation</option>
+              <option>MachineObservation</option>
+              <option>Sample</option>
+            </select>
+            <input
+              tabindex="2"
+              class="opacity-40 w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="ZUFMS-CRU00002"
+              value="ZUFMS-CRU00002"
+            />
+          </div>
+          <div class="w-full h-12 px-20 odd:bg-odd-row even:bg-even-row">
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="2022-03-24"
+              value="2022-03-24"
+            />
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="verificar amostra de tecido"
+            />
+            <select
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+            >
+              <option selected>PreservedSpecimen</option>
+              <option>LivingSpecimen</option>
+              <option>HumanObservation</option>
+              <option>MachineObservation</option>
+              <option>Sample</option>
+            </select>
+            <input
+              tabindex="2"
+              class="opacity-40 w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="ZUFMS-CRU00002"
+              value="ZUFMS-CRU00002"
+            />
+          </div>
+          <div class="w-full h-12 px-20 odd:bg-odd-row even:bg-even-row">
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="2022-03-24"
+              value="2022-03-24"
+            />
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="verificar amostra de tecido"
+            />
+            <select
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+            >
+              <option selected>PreservedSpecimen</option>
+              <option>LivingSpecimen</option>
+              <option>HumanObservation</option>
+              <option>MachineObservation</option>
+              <option>Sample</option>
+            </select>
+            <input
+              tabindex="2"
+              class="opacity-40 w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="ZUFMS-CRU00002"
+              value="ZUFMS-CRU00002"
+            />
+          </div>
+          <div class="w-full h-12 px-20 odd:bg-odd-row even:bg-even-row">
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="2022-03-24"
+              value="2022-03-24"
+            />
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="verificar amostra de tecido"
+            />
+            <select
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+            >
+              <option selected>PreservedSpecimen</option>
+              <option>LivingSpecimen</option>
+              <option>HumanObservation</option>
+              <option>MachineObservation</option>
+              <option>Sample</option>
+            </select>
+            <input
+              tabindex="2"
+              class="opacity-40 w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="ZUFMS-CRU00002"
+              value="ZUFMS-CRU00002"
+            />
+          </div>
+          <div class="w-full h-12 px-20 odd:bg-odd-row even:bg-even-row">
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="2022-03-24"
+              value="2022-03-24"
+            />
+            <input
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="verificar amostra de tecido"
+            />
+            <select
+              tabindex="1"
+              class="w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+            >
+              <option selected>PreservedSpecimen</option>
+              <option>LivingSpecimen</option>
+              <option>HumanObservation</option>
+              <option>MachineObservation</option>
+              <option>Sample</option>
+            </select>
+            <input
+              tabindex="2"
+              class="opacity-40 w-[20rem] h-full bg-transparent border-2 border-default-border px-3 placeholder:text-text-placeholder focus-visible:border-default-accent text-white"
+              placeholder="ZUFMS-CRU00002"
+              value="ZUFMS-CRU00002"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const currentTitle = document.getElementById("current-title");
+      const currentSubtitle = document.getElementById("current-subtitle");
+      const currentIcon = document.getElementById("current-icon");
+
+      const makeXIntervalTest = (min, max) => (x) => min <= x && x <= max;
+
+      const areas = {
+        registro: makeXIntervalTest(0, 1040),
+        ocorrencia: makeXIntervalTest(1041, 2080),
+        evento: makeXIntervalTest(2081, 4020),
+      };
+
+      const areasContent = {
+        registro: {
+          title: "Nível de Registro",
+          subtitle: "Termos genéticos aplicáveis a qualquer tipo de registro",
+          icon: '<svg fill="#FFF" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M7 15h7v2H7zm0-4h10v2H7zm0-4h10v2H7zm12-4h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-.14 0-.27.01-.4.04-.39.08-.74.28-1.01.55-.18.18-.33.4-.43.64-.1.23-.16.49-.16.77v14c0 .27.06.54.16.78s.25.45.43.64c.27.27.62.47 1.01.55.13.02.26.03.4.03h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7-.25c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75zM19 19H5V5h14v14z" /></svg>',
+        },
+        ocorrencia: {
+          title: "Ocorrência",
+          subtitle:
+            "Existência de um organismo em um determinado lugar e momento",
+          icon: '<svg fill="#FFF" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M2 17h2v.5H3v1h1v.5H2v1h3v-4H2v1zm1-9h1V4H2v1h1v3zm-1 3h1.8L2 13.1v.9h3v-1H3.2L5 10.9V10H2v1zm5-6v2h14V5H7zm0 14h14v-2H7v2zm0-6h14v-2H7v2z" /></svg>',
+        },
+        evento: {
+          title: "Evento",
+          subtitle: "Uma ação que ocorre em algum local durante algum tempo",
+          icon: '<svg fill="#FFF" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/></svg>',
+        },
+      };
+
+      window.addEventListener("scroll", () => {
+        const { title, subtitle, icon } =
+          areasContent?.[
+            Object.entries(areas).find(([area, test]) =>
+              test(window.scrollX)
+            )[0]
+          ] ?? {};
+
+        currentTitle.innerText = title;
+        currentSubtitle.innerText = subtitle;
+        currentIcon.innerHTML = icon;
+      });
+    </script>
+  </body>
+</html>
