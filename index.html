@@ -44,7 +44,7 @@
       };
     </script>
   </head>
-  <body class="w-[300rem]">
+  <body class="w-[300rem]" ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event)">
     <div
       class="bg-default-bg w-full min-w-fit h-full flex flex-col w-full whitespace-nowrap overflow-x-scroll"
     >
@@ -315,7 +315,29 @@
       </div>
     </div>
 
+    <div id="drop-file" class="hidden z-[2] absolute top-0 left-0 w-full h-full bg-black/40 border-4 border-dashed border-default-accent flex items-center justify-center">
+      <div class="w-2/6 h-2/6 flex flex-col justify-center">
+        <h3 class="text-2xl text-white">Importar arquivo .csv</h3>
+        <p class="text-text-fade">Solte o arquivo .csv importar</p>
+      </div>
+    </div>
+
     <script>
+      const dropfileElement = document.getElementById('drop-file')
+
+      const onDragOver = (event) => {
+        event.preventDefault()
+        console.log('isFile', event.dataTransfer.types.indexOf('Files') !== -1);
+        dropfileElement.classList.remove('hidden')
+      } 
+
+      const onDragLeave = (event) => {
+        event.preventDefault()
+        dropfileElement.classList.add('hidden')
+      }
+
+      const onDrop = onDragLeave
+
       const rowsElement = document.getElementById('rows')
       const newRowTemplate = document.createElement('template')
       newRowTemplate.innerHTML = `
@@ -351,7 +373,6 @@
       `
 
       const insertNewRow = () => {
-        console.log('here')
         rowsElement.insertBefore(newRowTemplate.content.cloneNode(true), rowsElement.children[rowsElement.children.length-2])
       }
 
